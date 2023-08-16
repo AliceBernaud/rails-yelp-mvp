@@ -1,0 +1,17 @@
+<div class="d-flex flex-column ">
+  <h1>Restaurants</h1>
+    <div class="d-flex justify-content-center">
+      <ul>
+      <%  @restaurants.each do |restaurant| %>
+        <li class=" p-2">
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %> </h2>
+          <p><%= restaurant.address %>
+          <p><%= restaurant.category %>
+          <span class="badge badge-primary badge-pill">2</span>
+          </li>
+        <% end %>
+
+        <%= link_to "New restaurant", new_restaurant_path%>
+      </ul>
+    </div>
+</div>
